@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -36,7 +37,7 @@ public class TestFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), TargetActivity.class);
-                startActivityForResult(intent, 200);
+                startActivityForResult(intent, TARGETACTIVITY_RESULTCODE);
             }
         });
         return view;

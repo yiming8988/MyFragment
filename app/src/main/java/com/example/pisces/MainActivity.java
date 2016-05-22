@@ -1,6 +1,7 @@
 package com.example.pisces;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 
@@ -45,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == TARGETACTIVITY_RESULTCODE) {
             tv_callBack.setText(getDate()+"  response result for MainActivity \n"+"resultCode is "+ resultCode);
+            tv_callBack.setTextColor(Color.BLACK);
+        }else{
+            tv_callBack.setText(MainActivity.getDate() + "  requestCode与预设返回值是否相等不相等");
+            tv_callBack.setTextColor(Color.RED);
         }
     }
 
